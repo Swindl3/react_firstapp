@@ -11,18 +11,23 @@ import React,{Component} from 'react';
 class ProductItem extends Component{
     constructor(props){
         super(props);
-        console.log('Constructor|'+props.productname);
+        console.log('Constructor ProductItem|'+props.productName);
         
     }
+    //doBuy(productName){
+            //console.log(productName)
+    //}
     render(){
-        const {productname,price} = this.props; //เนื่องจากเป็น Class  
+        const {productName,unitPrice,thumbnail} = this.props.product; //เนื่องจากเป็น Class  
         return (
-            <div>
-                <p>{productname}</p>
-                <p>{price}</p>
+            <div className="col-md-3 col-sm-6">
+                <img className="img-fluid img-thumbnail" src={thumbnail} alt={productName}/>
+                <h5 className="mt-2">{productName}</h5>
+                <p className="text-right title">{unitPrice}</p>
+                 <button className="btn btn-block btn-secondary title" onClick={() => this.props.onAddOrder(this.props.product)}>Buy</button>
             </div>
         )
-    }
+    }   
 }
 
 export default ProductItem;
