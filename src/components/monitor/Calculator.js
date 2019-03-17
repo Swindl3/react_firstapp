@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 class Calculator extends Component{
     
     showOrders(orders){
-        if(!orders || orders.length == 0){
+        if(!orders || orders.length === 0){
                 return <li className="text-right text-muted title">ไม่มีสินค้า</li>
         }
         return orders.map(orders =>{
@@ -27,8 +27,8 @@ class Calculator extends Component{
                     {this.showOrders(orders)}
                 </ul>
                 <hr />
-                <button className="btn btn-block btn-danger title">ยืนยัน</button>
-                <button className="btn btn-block btn-secondary title">ยกเลิก</button>
+                <button className="btn btn-block btn-danger title" onClick={()=>this.props.onConfirmOrder() } >ยืนยัน</button>
+                <button className="btn btn-block btn-secondary title" onClick={() => this.props.onCancelOrder()} >ยกเลิก</button>
             </div>
         )
     }
