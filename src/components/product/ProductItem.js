@@ -11,7 +11,7 @@ import React,{Component} from 'react';
 class ProductItem extends Component{
     constructor(props){
         super(props);
-        console.log('Constructor ProductItem|'+props.productName);
+        console.log('Constructor ProductItem|',props.product.productName);
         
     }
     //doBuy(productName){

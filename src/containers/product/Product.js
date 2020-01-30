@@ -24,6 +24,7 @@ class Product extends Component {
         this.props.history.push('products/edit/'+product.id)
     }
     render(){
+        console.log("Render Product",this.props.products)
         return(
             <div>
                 <Header />
@@ -36,7 +37,7 @@ class Product extends Component {
                             <button className="btn btn-success title float-right" onClick={()=>this.props.history.push('products/add')}>เพิ่ม</button>
                         </div>
                     </div>
-                    {this.props.products && Array.isArray(this.props.products) &&
+                    {this.props.products && Array.isArray(this.props.products) && 
                         <ProductList 
                             products={this.props.products} 
                             onDelProduct={this.delProduct} 
